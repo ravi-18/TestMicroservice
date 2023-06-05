@@ -73,7 +73,13 @@ namespace Book.Service.Services.Implementation
                     CategoryId = book.CategoryId,
                     AuthorId = book.AuthorId
                 };    
+                var author = new AuthorViewModel{
+                    Id = book.AuthorId,
+                    Name = book.AuthorName,
+                    Address = book.AuthorAddress
+                };
                 await _context.Books.AddAsync(books);
+                await _context.AuthorViewModels.AddAsync(author);
                 await _context.SaveChangesAsync();
                 var getBook = await _context.Books.SingleOrDefaultAsync(e => e.Id == books.Id);
 

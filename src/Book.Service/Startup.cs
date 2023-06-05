@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Book.Service.Data;
-using Book.Service.Handlers;
+// using Book.Service.Handlers;
 using Book.Service.Services;
 using Book.Service.Services.Implementation;
 using Microsoft.AspNetCore.Builder;
@@ -36,7 +36,7 @@ namespace Book.Service
                     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
                     .UseLazyLoadingProxies());
 
-            services.Configure<KafkaConfig>(Configuration.GetSection("Kafka"));
+            // services.Configure<KafkaConfig>(Configuration.GetSection("Kafka"));
             services.AddScoped<IBookService, BookService>();
 
             services.AddSwaggerGen(options =>

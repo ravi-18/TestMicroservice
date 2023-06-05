@@ -8,6 +8,9 @@ namespace Book.Service.CustomModels
         public int Year { get; set; }
         public Guid PublisherId { get; set; }
         public Guid AuthorId { get; set; }
+        public string AuthorName { get; set; }
+        public string AuthorAddress { get; set; }
+
         public Guid CategoryId { get; set; }
     }
 }
